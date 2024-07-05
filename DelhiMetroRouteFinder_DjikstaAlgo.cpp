@@ -145,73 +145,72 @@ int main()
     
     cout<<"Station Codes Are As Under :"<<"\n\n";
    
-
     //Printing the station codes with station names
     for (int i = 0; i < 56; i++)
     {
         cout << "Enter " << i << " for " << stations[i] << endl;
     }
 
-
     cout <<endl;
     int x;
     cout<<"Enter 1 to Start or 0 to End : ";
     cin>>x;
     cout<<endl;
+
+    
     while(x){
-    int counter =3;
-
-    //Input of Source Station Code
-    cout << "Enter the Source Station Code : " << endl;
-    cin >> source ;
-    cout<<endl;
-
-    //If Invalid Source Station Code
-    while(source>55 || source <0 ) {
-        counter--;
-        if(counter==0) {
-            cout<<"Invalid Station Code\n"<<endl;
-            cout<<"Attempts Over!!\n"<<endl;
-            cout<<"\n Happy Travelling !"<<endl;
-            return 0;
-        }
-        cout<<"Invalid Station Code"<<"\n";
-        cout<<counter<<" attempts remaining. \n"<<endl;
-        cout << "Re-Enter the Valid Source Station Code : ";
+        int counter =3;
+    
+        //Input of Source Station Code
+        cout << "Enter the Source Station Code : " << endl;
         cin >> source ;
         cout<<endl;
-    }
-    counter=3;
-
-    //Input of destination station codes
-    cout<< "Enter the Destination Station Code : " << endl;
-    cin >> destination;
-    cout<<endl;
     
-    //If invalid destination code
-    while(destination>55 || destination <0 ) {
-        counter--;
-        if(counter==0) {
-            cout<<"Invalid Station Code\n"<<endl;
-            cout<<"Attempts Over!!\n"<<endl;
-            cout<<"\n Happy Travelling !"<<endl;
-            return 0;
+        //If Invalid Source Station Code
+        while(source>55 || source <0 ) {
+            counter--;
+            if(counter==0) {
+                cout<<"Invalid Station Code\n"<<endl;
+                cout<<"Attempts Over!!\n"<<endl;
+                cout<<"\n Happy Travelling !"<<endl;
+                return 0;
+            }
+            cout<<"Invalid Station Code"<<"\n";
+            cout<<counter<<" attempts remaining. \n"<<endl;
+            cout << "Re-Enter the Valid Source Station Code : ";
+            cin >> source ;
+            cout<<endl;
         }
-        cout<<"Invalid Station Code"<<"\n";
-        cout<<counter<<" attempts remaining. \n"<<endl;
-        cout << "Re-Enter the Valid Destination Station Code : " << endl;
+        counter=3;
+    
+        //Input of destination station codes
+        cout<< "Enter the Destination Station Code : " << endl;
         cin >> destination;
         cout<<endl;
-    }
-     
-    //Calling the Dijkstra algorithm function
-
-    dijkstra( source,destination,graph,stations);
-
-    //Restart the process
-    cout<<"Enter 1 for Another Station Routes or 0 to End : ";
-    cin>>x;
-    cout<<endl;
+        
+        //If invalid destination code
+        while(destination>55 || destination <0 ) {
+            counter--;
+            if(counter==0) {
+                cout<<"Invalid Station Code\n"<<endl;
+                cout<<"Attempts Over!!\n"<<endl;
+                cout<<"\n Happy Travelling !"<<endl;
+                return 0;
+            }
+            cout<<"Invalid Station Code"<<"\n";
+            cout<<counter<<" attempts remaining. \n"<<endl;
+            cout << "Re-Enter the Valid Destination Station Code : " << endl;
+            cin >> destination;
+            cout<<endl;
+        }
+         
+        //Calling the Dijkstra algorithm function
+        dijkstra( source,destination,graph,stations);
+    
+        //Restart the process
+        cout<<"Enter 1 for Another Station Routes or 0 to End : ";
+        cin>>x;
+        cout<<endl;
     }
     
     cout<<"\nHappy Travelling !"<<endl;
